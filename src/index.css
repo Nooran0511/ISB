@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 2 100% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 2 100% 44%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 2 100% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 2 100% 44%;
+
+    /* Custom tokens */
+    --primary-glow: 2 100% 54%;
+    --gradient-primary: linear-gradient(135deg, hsl(2, 100%, 44%), hsl(2, 100%, 54%));
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 7%), hsl(0, 0%, 4%));
+    --shadow-glow: 0 0 30px hsl(2 100% 44% / 0.3);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-red {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0.85) 0%,
+      hsl(0 0% 0% / 0.6) 50%,
+      hsl(0 0% 0% / 0.3) 100%
+    );
+  }
+
+  .section-gradient {
+    background: linear-gradient(180deg, hsl(0 0% 7%) 0%, hsl(0 0% 5%) 100%);
+  }
+
+  /* ── Premium shimmer sweep on cards ── */
+  .card-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      hsl(0 0% 100% / 0.06) 50%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    transition: none;
+    pointer-events: none;
+  }
+  .card-shimmer:hover::after {
+    animation: shimmer-sweep 0.55s ease forwards;
+  }
+
+  /* ── Animated gradient border ── */
+  .border-glow {
+    position: relative;
+  }
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(2 100% 44% / 0.6), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .border-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Floating orb ── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  /* ── Nav link underline slide ── */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: hsl(var(--primary));
+    transition: width 0.25s ease;
+  }
+  .nav-underline:hover::after,
+  .nav-underline.active::after {
+    width: 100%;
+  }
+
+  /* ── Button lift ── */
+  .btn-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsl(2 100% 44% / 0.35);
+  }
+  .btn-lift:active {
+    transform: translateY(0);
+  }
+
+  /* ── Hero line reveal ── */
+  .hero-line {
+    overflow: hidden;
+  }
+  .hero-line > span {
+    display: inline-block;
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes shimmer-sweep {
+  to { transform: translateX(100%); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
+@keyframes orb-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-20px, 15px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes badge-pop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  70%  { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes text-reveal {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes whatsapp-ring {
+  0%, 100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 0 hsl(142 70% 45% / 0.5); }
+  25%       { transform: scale(1.12) rotate(-8deg); }
+  50%       { transform: scale(1.12) rotate(8deg); box-shadow: 0 0 0 12px hsl(142 70% 45% / 0); }
+  75%       { transform: scale(1.08) rotate(-4deg); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: hsl(0 0% 7%); }
+::-webkit-scrollbar-thumb { background: hsl(0 0% 25%); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(2 100% 44%); }
