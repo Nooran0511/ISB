@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link to="/" className="flex-shrink-0 mr-8">
           <motion.img
             src={logo}
-            alt="ISB Rent a Car"
+            alt="Faiz Car Rental"
             className="h-14 md:h-16 object-contain"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.2 }}
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <motion.a
-          href="tel:+923124891113"
+          href="tel:+923009461207"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.4 }}
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* Mobile right side */}
         <div className="flex items-center gap-4 ml-auto md:hidden">
-          <a href="tel:+923124891113" className="text-primary">
+          <a href="tel:+923009461207" className="text-primary">
             <Phone className="w-5 h-5" />
           </a>
           <button

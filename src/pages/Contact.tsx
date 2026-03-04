@@ -114,8 +114,12 @@ const Contact = () => {
               <h2 className="text-2xl font-heading font-bold text-foreground">Contact Information</h2>
               <div className="space-y-4 text-sm">
                 {[
-                  { href: "tel:+923124891113", icon: Phone, text: "+92 312 4891113" },
-                  { href: "mailto:islamabadrentacar597@gmail.com", icon: Mail, text: "islamabadrentacar597@gmail.com" },
+                  { href: "tel:+923039249367", icon: Phone, text: "+92 303 9249367" },
+                  { href: "tel:+923219461207", icon: Phone, text: "+92 321 9461207" },
+                  { href: "tel:+923009461207", icon: Phone, text: "+92 300 9461207" },
+                  { href: "tel:+923227773337", icon: Phone, text: "+92 322 777 3337" },
+                  { href: "tel:+924235140699", icon: Phone, text: "+92 423 514 0699" },
+                  { href: "mailto:info@faizcarrental.com", icon: Mail, text: "info@faizcarrental.com" },
                 ].map(({ href, icon: Icon, text }, i) => (
                   <motion.a
                     key={href}
@@ -131,7 +135,7 @@ const Contact = () => {
                   </motion.a>
                 ))}
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <MapPin className="w-5 h-5 text-primary flex-shrink-0" /> Islamabad, Pakistan
+                  <MapPin className="w-5 h-5 text-primary flex-shrink-0" /> Lahore, Pakistan
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Clock className="w-5 h-5 text-primary flex-shrink-0" /> Mon–Sun: 24/7 Available
@@ -139,9 +143,9 @@ const Contact = () => {
               </div>
               <div className="flex gap-3 pt-2">
                 {[
-                  { href: "https://www.facebook.com/isbrentacar.pk/", icon: Facebook },
-                  { href: "https://www.instagram.com/islamabad_rent_a_car/", icon: Instagram },
-                  { href: "https://youtube.com/channel/UCU_TywujCjVx2gtF_eY3o2w", icon: Youtube },
+                  { href: "https://www.facebook.com/faizcarrental1", icon: Facebook },
+                  { href: "https://www.instagram.com/faiz_rentacar/", icon: Instagram },
+                  //{ href: "https://youtube.com/channel/UCU_TywujCjVx2gtF_eY3o2w", icon: Youtube },
                 ].map(({ href, icon: Icon }) => (
                   <motion.a
                     key={href}
@@ -166,8 +170,8 @@ const Contact = () => {
               className="rounded-lg overflow-hidden border border-border"
             >
               <iframe
-                title="ISB Rent a Car Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.123456!2d73.0478848!3d33.7294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe1be5555555%3A0x1234567890abcdef!2sISB+Rent+A+Car!5e0!3m2!1sen!2s!4v1700000000000"
+                title="Faiz Car Rental Location"
+                src="https://share.google/jB2eqx9UFXnJtwepR"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

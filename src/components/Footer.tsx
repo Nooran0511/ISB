@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, TwitterIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stagger = {
@@ -24,9 +24,9 @@ const Footer = () => {
         >
           {/* Brand */}
           <motion.div variants={fadeUp}>
-            <h3 className="text-2xl font-heading font-bold text-gradient mb-4">ISB Rent a Car</h3>
+            <h3 className="text-2xl font-heading font-bold text-gradient mb-4">Faiz Car Rental</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              No#1 Car Rental Company in Islamabad, Pakistan. Providing premium, reliable vehicles since 2015.
+              No#1 Car Rental Company in Lahore, Pakistan. Providing premium, reliable vehicles since 1995.
             </p>
           </motion.div>
 
@@ -65,20 +65,30 @@ const Footer = () => {
           <motion.div variants={fadeUp}>
             <h4 className="font-heading font-semibold text-foreground mb-4">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <a href="tel:+923124891113" className="flex items-center gap-2 hover:text-primary transition-colors group">
-                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> +92 312 4891113
+              <a href="tel:+923009461207" className="flex items-center gap-2 hover:text-primary transition-colors group">
+                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> +92 300 9461207
               </a>
-              <a href="mailto:islamabadrentacar597@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors group">
-                <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> islamabadrentacar597@gmail.com
+              <a href="tel:+923227773337" className="flex items-center gap-2 hover:text-primary transition-colors group">
+                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> +92 322 777 3337
+              </a>
+              {/* <a href="tel:+924235140699" className="flex items-center gap-2 hover:text-primary transition-colors group">
+                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> +92 423 514 0699
+              </a> */}
+              <a href="tel:+923124891113" className="flex items-center gap-2 hover:text-primary transition-colors group">
+                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> +92 312 489 1113
+              </a>
+              <a href="mailto:info@faizcarrental.com" className="flex items-center gap-2 hover:text-primary transition-colors group">
+                <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> info@faizcarrental.com
               </a>
               <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" /> Islamabad, Pakistan
+                <MapPin className="w-4 h-4 text-primary" /> Lahore, Pakistan
               </span>
               <div className="flex gap-3 mt-2">
                 {[
-                  { href: "https://www.facebook.com/isbrentacar.pk/", icon: Facebook },
-                  { href: "https://www.instagram.com/islamabad_rent_a_car/", icon: Instagram },
-                  { href: "https://youtube.com/channel/UCU_TywujCjVx2gtF_eY3o2w", icon: Youtube },
+                  { href: "https://www.facebook.com/faizcarrental1", icon: Facebook },
+                   { href: "https://x.com/faizcarrental1", icon: TwitterIcon },
+                  { href: "https://www.instagram.com/faiz_rentacar/", icon: Instagram },
+                  //{ href: "https://youtube.com/channel/UCU_TywujCjVx2gtF_eY3o2w", icon: Youtube },
                 ].map(({ href, icon: Icon }) => (
                   <motion.a
                     key={href}
@@ -104,7 +114,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"
         >
-          <span>© {new Date().getFullYear()} ISB Rent a Car. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Faiz Car Rental. All rights reserved.</span>
           <span>Powered by SixSenses</span>
         </motion.div>
       </div>

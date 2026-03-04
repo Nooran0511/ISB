@@ -70,7 +70,7 @@ const About = () => {
               { icon: Shield, title: "Fully Insured", desc: "Every vehicle is covered with comprehensive insurance" },
               { icon: Clock, title: "24/7 Availability", desc: "We're always ready, day or night" },
               { icon: Users, title: "Professional Drivers", desc: "Trained, courteous and experienced" },
-              { icon: Award, title: "9+ Years", desc: "Trusted by thousands of customers since 2015" },
+              { icon: Award, title: "30+ Years", desc: "Trusted by thousands of customers since 2015" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
