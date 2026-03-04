@@ -45,7 +45,7 @@ const Index = () => {
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Parallax background */}
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
-          <img src={heroBg} alt="Luxury car in Islamabad" className="w-full h-full object-cover scale-110" />
+          <img src={heroBg} alt="Luxury car in Lahore" className="w-full h-full object-cover scale-110" />
           <div className="hero-overlay absolute inset-0" />
         </motion.div>
 
